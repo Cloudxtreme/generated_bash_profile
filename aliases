@@ -1,0 +1,85 @@
+#aliases
+
+alias ka="killall"
+
+alias g="git"
+alias ga="git add"
+alias gd="git difftool -y"
+alias gwd="git diff --word-diff"
+alias gs="git status -sb"
+alias gc="git commit"
+alias gca="git commit -a"
+alias ll="ls -las"
+alias gl="git log --oneline --decorate"
+alias g="git"
+alias gp="git pull --rebase"
+
+alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|" # taken from http://coderwall.com/p/hvfvva
+
+# rails
+alias be="bundle exec"
+alias ber="bundle exec rake"
+alias bers="bundle exec rake spec"
+alias berc="bundle exec rails console"
+alias bes="bundle exec rspec"
+alias r="bundle exec rails"
+alias rs="bundle exec rails s"
+alias psp="rake parallel:create; rake parallel:prepare; rake parallel:spec"
+alias psps="rake parallel:spec"
+
+# for rspec
+alias rspec="rspec --color --format documentation"
+
+function gex {
+  git update-index --assume-unchanged $@
+}
+
+function gin {
+  git update-index --no-assume-unchanged $@
+}
+
+function gdel {
+  git status | awk '/deleted: (.*)/ {print $3}' | xargs git rm -f;
+}
+
+# https://gist.github.com/427815
+# script/server with Rails 3 support
+ss() {
+  if [ -f ./script/rails ]; then
+    ./script/rails server $@
+  else
+    ./script/server -e $@
+  fi
+}
+
+# script/console with Rails 3 support
+sc() {
+  if [ -f ./script/rails ]; then
+    ./script/rails console $@
+  else
+    ./script/console $@
+  fi
+}
+
+# script/generate with Rails 3 support
+sg() {
+  if [ -f ./script/rails ]; then
+    ./script/rails generate $@
+  else
+    ./script/generate $@
+  fi
+}
+
+rr() {
+  rake
+  if [ $? -gt 0 ]; then
+    say "Some tests failed."
+    echo "Some tests failed."
+  else
+    say "All tests green."
+    echo "All tests green."
+  fi
+}
+
+# capistrano stuff: http://www.deprec.org/trac.cgi/wiki/UsageDocs
+alias cap1="`which cap` _1.4.1_"

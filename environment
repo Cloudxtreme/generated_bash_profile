@@ -1,0 +1,10 @@
+#environment
+eval "$(rbenv init -)" # https://github.com/sstephenson/rbenv
+
+export CLICOLOR=1
+export MANPATH=/opt/local/share/man:$MANPATH
+export HISTSIZE=5000
+
+function title {
+  echo -e "\033];$1\007"
+}

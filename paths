@@ -1,0 +1,11 @@
+# paths
+export PATH=~/.rbenv/shims:$PATH                 # RBENV
+export PATH=/usr/local/bin:$PATH                 # homebrew
+export PATH=/usr/local/bin:$PATH                 # homebrew
+export PATH=/usr/local/sbin:$PATH                # homebrew
+export PATH=~/bin:$PATH
+export PATH=/opt/local/bin:$PATH
+export PATH=/opt/local/sbin:$PATH
+export PATH=/usr/local/bin/gem:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:$PATH
