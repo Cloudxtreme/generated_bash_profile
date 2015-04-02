@@ -22,3 +22,6 @@ export AUTOTEST=true
 
 # Allow us to open the proper library with bundle open command
 export BUNDLER_EDITOR=mvim
+
+# useful when running test suites locally or other things
+export DEVELOPMENT=true
