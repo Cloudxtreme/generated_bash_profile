@@ -68,6 +68,13 @@ rr() {
   fi
 }
 
+# git completion see `brew info bash-completion` for details
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+else
+  echo "Run: 'brew install bash-completion' for git completion"
+fi
+
 
 # capistrano stuff: http://www.deprec.org/trac.cgi/wiki/UsageDocs
 alias cap1="`which cap` _1.4.1_"
